@@ -20,7 +20,7 @@ encore afin que vous puissiez oublier l'écriture de code standard.
  
 -> Cloner le projet : 
  
- git clone -b <branch> <remote_repo>
+ git clone -b (branch) <remote_repo>
  
 -> Install Dépendances : 
  
