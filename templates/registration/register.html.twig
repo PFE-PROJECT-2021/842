@@ -1,103 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Agence 842 | Registration Page</title>
+{% extends 'base.html.twig' %}
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
-</head>
-<body class="hold-transition register-page">
-<div class="register-box">
-  <div class="register-logo">
-    <a href="../../index2.html"><b>Agence 842</b> CRM</a>
-  </div>
+{% block title %}Agence 842 | Inscription {% endblock %}
 
-  <div class="card">
+{% block body %}
 
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+  <body class="hold-transition register-page">
+  <div class="register-box">
+    <div class="register-logo">
+      <a href="../../index2.html"><b>Agence 842</b> CRM</a>
+    </div>
 
-    <div class="card-body register-card-body">
-      <p class="login-box-msg">Inscription, c’est rapide et facile.</p>
+    <div class="card">
 
-      <form action="../../index.html" method="post">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Nom complet">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
+      {% for flashError in app.flashes('verify_email_error') %}
+          <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+      {% endfor %}
+
+      <div class="card-body register-card-body">
+        <p class="login-box-msg">Inscrivez-vous, c’est rapide et facile.</p>
+
+      <!--<form action="../../index.html" method="post">-->
+        {{ form_start(registrationForm) }}
+
+          {{ form_row(registrationForm.full_name, { 'label': 'Nom complet', 'attr' : { 'class' : 'form-control' } }) }}
+
+          {{ form_row(registrationForm.email, { 'label': 'Adresse email', 'attr' : { 'class' : 'form-control' } }) }}
+
+          {{ form_row(registrationForm.plainPassword, { 'label': 'Mot de passe', 'attr' : { 'class' : 'form-control' } }) }}
+
+          {{ form_row(registrationForm.agreeTerms, {label: 'Accepter les conditions'}) }}
+
+        <div class="col-5 text-right">
+          <button type="submit" class="btn btn-primary btn-block">S'enregistrer</button>
         </div>
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Adresse email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Mot de passe">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Retaper le mot de passe">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-              <label for="agreeTerms">
-               J'accepte <a href="#">les conditions</a>
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">S’inscrire</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
 
-      <div class="social-auth-links text-center">
-        <p>- OU -</p>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i>  Inscrivez-vous à l'aide de Google
-        </a>
+        {{ form_end(registrationForm) }}
       </div>
 
-      <a href="{{ path('app_login') }}" class="text-center">Se connecter</a>
-    </div>
-    <!-- /.form-box -->
-  </div><!-- /.card -->
-</div>
-<!-- /.register-box -->
+        <div class="social-auth-links text-center">
+          <p>- OU -</p>
+          <a href="#" class="btn btn-block btn-danger">
+            <i class="fab fa-google-plus mr-2"></i>  Inscrivez-vous à l'aide de Google
+          </a>
+        </div>
 
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-</body>
-</html>
+        <a href="{{ path('app_login') }}" class="text-center">Se connecter</a>
+      </div>
+      <!-- /.form-box -->
+    </div><!-- /.card -->
+  </div>
+  <!-- /.register-box -->
+
+  </body>
+
+{% endblock %}
