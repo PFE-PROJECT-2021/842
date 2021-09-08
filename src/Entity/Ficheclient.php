@@ -47,6 +47,11 @@ class Ficheclient
      */
     private $referencement;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $raisonsociale;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +125,18 @@ class Ficheclient
     public function setReferencement(string $referencement): self
     {
         $this->referencement = $referencement;
+
+        return $this;
+    }
+
+    public function getRaisonsociale(): ?string
+    {
+        return $this->raisonsociale;
+    }
+
+    public function setRaisonsociale(string $raisonsociale): self
+    {
+        $this->raisonsociale = $raisonsociale;
 
         return $this;
     }
