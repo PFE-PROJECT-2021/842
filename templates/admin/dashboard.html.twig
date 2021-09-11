@@ -1,34 +1,120 @@
 {% extends '@EasyAdmin/layout.html.twig' %}
 
 
-{% set _content_title = 'Admin dashboard' %}
+{% set _content_title = 'TABLEAU DE BORD' %}
 {% block page_title -%}
     {{ _content_title }}
 {%- endblock %}
 {% block content_header %}
-    <h1 class="title">{{ _content_title }}</h1>
+    <h5 class="title" style="font-weight: bold;">{{ _content_title }}</h5>
 {% endblock %}
 {% block main %}
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Stats</h3>
-                </div>
-                <div class="panel-body">
-                    <ul class="list-group" style="margin-left: 0;">
-                        <li class="list-group-item">
-                            <span class="badge">{{ 4 }}</span>
-                            Genus count
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge">{{ 9 }}</span>
-                            Published genus count
-                        </li>
-                    </ul>
+<div class="container-fluid">
+        <div class="row">
+            <div class="card bg-info text-white">
+                <img src="images/Dashboard_image.png" class="card-img" width="500" height="200">
+                <div class="card-img-overlay">
+                    <h2 class="card-title text-right" style="font-size:3vw; font-weight: bold;">Bienvenue dans 842 CRM</h2>
+                    <p class="card-text text-black text-right"></p>
                 </div>
             </div>
         </div>
+
+    <div class="row mt-3">
+        <div class="col-sm-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body">
+                    <span class="display-3" style="font-weight: bold;"> 150 </span> </br> Clients Enregistrés
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                    <a href="#" class="text-white">Plus d'infos <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body">
+                    <span class="display-3" style="font-weight: bold;"> 54 </span> </br> Rendez-vous
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                    <a href="#" class="text-white">Plus d'infos <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-body">
+                    <span class="display-3" style="font-weight: bold;"> 45 </span> </br> Fichiers Prospects
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                    <a href="#" class="text-white">Plus d'infos <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-body">
+                    <span class="display-3" style="font-weight: bold;"> 45% </span> </br> Taux Prise Rendez-vous
+                </div>
+                <div class="card-footer bg-transparent border-success">
+                    <a href="#" class="text-white">Plus d'infos <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-chart-pie mr-1"></i>
+                        Sales
+                    </h3>
+                    <div class="card-tools">
+                        <ul class="nav nav-pills ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- /.card-header -->
+                <div class="card-body">
+                    <div class="tab-content p-0">
+                        <!-- Morris chart - Sales -->
+                        <div class="chart tab-pane active" id="revenue-chart"
+                             style="position: relative; height: 300px;">
+                            <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
+                        </div>
+                        <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
+                            <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
+                        </div>
+                    </div>
+                </div><!-- /.card-body -->
+            </div>
+        </div>
+        {#        <div class="col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Stats</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group" style="margin-left: 0;">
+                                <li class="list-group-item">
+                                    <span class="badge">{{ 4 }}</span>
+                                    Genus count
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="badge">{{ 9 }}</span>
+                                    Published genus count
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>#}
         <div class="col-sm-4">
             <div class="panel panel-primary">
                 <div class="panel-heading">
@@ -52,22 +138,105 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">test</h3>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-6">
+            <div class="card bg-gradient-info">
+                <div class="card-header border-0">
+                    <h3 class="card-title">
+                        <i class="fas fa-th mr-1"></i>
+                        Statistiques
+                    </h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <p>
-                        <img src="{{ asset('images/octopus-rubescens.jpg') }}" />
-                    </p>
-                    <p>180</p>
-                    <a href="#"
-                       class="btn btn-primary">
-                        Show details
-                    </a>
+                <div class="card-body">
+                    <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
+                <!-- /.card-body -->
+                <div class="card-footer bg-transparent">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
+                                   data-fgColor="#39CCCC">
+
+                            <div class="text-white">Mail-Orders</div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-4 text-center">
+                            <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
+                                   data-fgColor="#39CCCC">
+
+                            <div class="text-white">Online</div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-4 text-center">
+                            <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
+                                   data-fgColor="#39CCCC">
+
+                            <div class="text-white">In-Store</div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.card-footer -->
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card bg-gradient-success">
+                <div class="card-header border-0">
+
+                    <h3 class="card-title">
+                        <i class="far fa-calendar-alt"></i>
+                        Calendrier
+                    </h3>
+                    <!-- tools card -->
+                    <div class="card-tools">
+                        <!-- button with a dropdown -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" data-offset="-52">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            <div class="dropdown-menu" role="menu">
+                                <a href="#" class="dropdown-item">Add new event</a>
+                                <a href="#" class="dropdown-item">Clear events</a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">View calendar</a>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-success btn-sm" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /. tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body pt-0">
+                    <!--The calendar -->
+                    <div id="calendar" style="width: 100%"></div>
+                </div>
+                <!-- /.card-body -->
             </div>
         </div>
     </div>
+</div>
+
+<footer class="main-footer">
+        <strong>Copyright &copy; 2021 <a href="https://www.agence-842.com">842 CRM - 842 Concept</a>.</strong>
+        Tous droits réservés.
+        <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 1.0
+        </div>
+</footer>
 {% endblock %}

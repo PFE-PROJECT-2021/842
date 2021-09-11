@@ -16,6 +16,7 @@ class FicheclientType extends AbstractType
             ->add('telclient')
             ->add('emailcli')
             ->add('activite')
+            ->add('raisonsociale')
             ->add('siteexistant')
             ->add('referencement')
         ;

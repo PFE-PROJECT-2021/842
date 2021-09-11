@@ -12,6 +12,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\UX\Chartjs\Builder\ChartBuilderInterface;
+use Symfony\UX\Chartjs\Model\Chart;
 
 class  DashboardController extends AbstractDashboardController
 {
@@ -20,6 +22,7 @@ class  DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
+
         return $this->render('admin/dashboard.html.twig');
     }
 
@@ -39,7 +42,7 @@ class  DashboardController extends AbstractDashboardController
     {
         return[
 
-            MenuItem::linktoDashboard('Tableau de bord', 'fa fa-home'),
+            MenuItem::linktoDashboard('Tableau de bord', 'fa fa-home')->setCssClass('btn btn-outline-info'),
 
             MenuItem::section('Gestion Client'),
             MenuItem::linkToCrud('Fiche client', 'fas fa-list', Ficheclient::class),
