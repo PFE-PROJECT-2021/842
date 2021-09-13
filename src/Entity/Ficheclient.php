@@ -38,12 +38,12 @@ class Ficheclient
     private $activite;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="boolean")
      */
     private $siteexistant;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="boolean")
      */
     private $referencement;
 
@@ -105,29 +105,19 @@ class Ficheclient
         return $this;
     }
 
-    public function getSiteexistant(): ?string
+    public function getSiteexistant(): ?bool
     {
         return $this->siteexistant;
     }
 
-    public function setSiteexistant(string $siteexistant): self
+    public function setSiteexistant(bool $siteexistant): self
     {
         $this->siteexistant = $siteexistant;
 
         return $this;
     }
 
-    public function getReferencement(): ?string
-    {
-        return $this->referencement;
-    }
 
-    public function setReferencement(string $referencement): self
-    {
-        $this->referencement = $referencement;
-
-        return $this;
-    }
 
     public function getRaisonsociale(): ?string
     {
@@ -137,6 +127,18 @@ class Ficheclient
     public function setRaisonsociale(string $raisonsociale): self
     {
         $this->raisonsociale = $raisonsociale;
+
+        return $this;
+    }
+
+    public function getReferencement(): ?bool
+    {
+        return $this->referencement;
+    }
+
+    public function setReferencement(bool $referencement): self
+    {
+        $this->referencement = $referencement;
 
         return $this;
     }
