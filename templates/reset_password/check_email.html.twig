@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+    
+<body class="hold-transition login-page">
+    <div class="login-box">
+  <div class="login-logo">
+    <a href="{{ path('app_login') }}"><b>Agence 842</b> CRM</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+
+    <div class="card-body login-card-body">
+     <p>
+        Un e-mail a été envoyé qui contient un lien sur lequel vous pouvez cliquer pour réinitialiser votre mot de passe.
+        Ce lien expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+    </p>
+    <p>Si vous ne recevez pas d'e-mail, veuillez vérifier votre dossier spam ouk expirera dans <a href="{{ path('app_forgot_password_request') }}"> réessayer</a>.</p>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+
+</body>
+
+
+{% endblock %}
