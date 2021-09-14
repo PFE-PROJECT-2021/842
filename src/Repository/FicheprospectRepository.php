@@ -47,4 +47,17 @@ class FicheprospectRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    /**
+     * @return int|mixed|string
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function countAllFicheprospect()
+    {
+        $queryBuilder = $this->createQueryBuilder('p');
+        $queryBuilder->select('COUNT (p.id) as value');
+
+        return $queryBuilder->getQuery()->getOneOrNullResult();
+    }
+
 }

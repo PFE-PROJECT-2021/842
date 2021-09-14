@@ -47,4 +47,16 @@ class FicheclientRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    /**
+     * @return int|mixed|string
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function countAllClient()
+    {
+        $queryBuilder = $this->createQueryBuilder('c');
+        $queryBuilder->select('COUNT (c.id) as value');
+
+        return $queryBuilder->getQuery()->getOneOrNullResult();
+    }
 }

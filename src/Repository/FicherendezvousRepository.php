@@ -47,4 +47,15 @@ class FicherendezvousRepository extends ServiceEntityRepository
         ;
     }
     */
+    /**
+     * @return int|mixed|string
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     */
+    public function countAllRdv()
+    {
+        $queryBuilder = $this->createQueryBuilder('r');
+        $queryBuilder->select('COUNT (r.id) as value');
+
+        return $queryBuilder->getQuery()->getOneOrNullResult();
+    }
 }
