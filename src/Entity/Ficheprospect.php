@@ -32,6 +32,11 @@ class Ficheprospect
      */
     private $dateappel;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Ficheclient::class, inversedBy="ficheprospect", cascade={"persist", "remove"})
+     */
+    private $client;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -72,4 +77,17 @@ class Ficheprospect
 
         return $this;
     }
+
+    public function getClient(): ?Ficheclient
+    {
+        return $this->client;
+    }
+
+    public function setClient(?Ficheclient $client): self
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
 }

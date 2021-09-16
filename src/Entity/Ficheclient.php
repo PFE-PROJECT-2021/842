@@ -3,7 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\FicheclientRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use mysql_xdevapi\Collection;
 
 /**
  * @ORM\Entity(repositoryClass=FicheclientRepository::class)
@@ -51,6 +53,18 @@ class Ficheclient
      * @ORM\Column(type="string", length=255)
      */
     private $raisonsociale;
+
+    /**
+     * @var ArrayCollection|Collection
+     *
+     * @ORM\OneToOne(targetEntity=Ficheprospect::class, mappedBy="client", cascade={"persist", "remove"})
+     */
+    private $ficheprospect;
+
+    public function __toString()
+    {
+        return $this->getNomclient().' - '.$this->getRaisonsociale();
+    }
 
     public function getId(): ?int
     {
@@ -142,4 +156,27 @@ class Ficheclient
 
         return $this;
     }
+
+    public function getFicheprospect(): ?Ficheprospect
+    {
+        return $this->ficheprospect;
+    }
+
+    public function setFicheprospect(?Ficheprospect $ficheprospect): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($ficheprospect === null && $this->ficheprospect !== null) {
+            $this->ficheprospect->setClient(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($ficheprospect !== null && $ficheprospect->getClient() !== $this) {
+            $ficheprospect->setClient($this);
+        }
+
+        $this->ficheprospect = $ficheprospect;
+
+        return $this;
+    }
+
 }

@@ -68,7 +68,7 @@ class  DashboardController extends AbstractDashboardController
             MenuItem::linktoDashboard('Tableau de bord', 'fa fa-home')->setCssClass('btn btn-outline-light'),
 
             MenuItem::section('Gestion Client'),
-            MenuItem::linkToCrud('Fiche client', 'fas fa-list', Ficheclient::class),
+            MenuItem::linkToCrud('Entreprise', 'fas fa-list', Ficheclient::class),
             MenuItem::linkToCrud('Cahier de charge', 'fa fa-file-invoice', Cahierdecharge::class),
 
             MenuItem::section('Gestion Fiche'),
