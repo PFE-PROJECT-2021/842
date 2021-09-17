@@ -3,7 +3,9 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use mysql_xdevapi\Collection;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -55,6 +57,23 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=150, nullable=true)
      */
     private $nom;
+
+    /**
+     * @var ArrayCollection|Collection
+     *
+     * @ORM\OneToMany(targetEntity=Ficherendezvous::class, mappedBy="user", cascade={"persist", "remove"})
+     */
+    private $ficherdv;
+
+    public function __toString()
+    {
+        return $this->getNom();
+    }
+
+    public function __construct()
+    {
+        $this->ficherdv = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -188,5 +207,35 @@ class User implements UserInterface
     public function getIsVerified(): ?bool
     {
         return $this->isVerified;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection|Ficherendezvous[]
+     */
+    public function getFicherdv(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->ficherdv;
+    }
+
+    public function addFicherdv(Ficherendezvous $ficherdv): self
+    {
+        if (!$this->ficherdv->contains($ficherdv)) {
+            $this->ficherdv[] = $ficherdv;
+            $ficherdv->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFicherdv(Ficherendezvous $ficherdv): self
+    {
+        if ($this->ficherdv->removeElement($ficherdv)) {
+            // set the owning side to null (unless already changed)
+            if ($ficherdv->getUser() === $this) {
+                $ficherdv->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }

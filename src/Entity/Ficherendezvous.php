@@ -62,6 +62,11 @@ class Ficherendezvous
      */
     private $entreprise;
 
+    /**
+     * @ORM\ManyToOne (targetEntity=User::class, inversedBy="ficherdv")
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -171,6 +176,18 @@ class Ficherendezvous
     public function setEntreprise(?Ficheclient $entreprise): self
     {
         $this->entreprise = $entreprise;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

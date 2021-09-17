@@ -46,6 +46,8 @@ class FicherendezvousCrudController extends AbstractCrudController
                 ->setLabel('Nom de l\'entreprise')->setColumns('col-5')->autoComplete(),
             TextEditorField::new('commentaire')
                 ->setLabel('Commentaire d\'appel')->setColumns('col-12'),
+            AssociationField::new('user')
+                ->setLabel('Agent')->setColumns('col-5')->hideOnForm(),
         ];
 
         return $fields;
