@@ -57,6 +57,11 @@ class Ficherendezvous
      */
     private $sms;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Ficheclient::class, inversedBy="ficherendezvous")
+     */
+    private $entreprise;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -154,6 +159,18 @@ class Ficherendezvous
     public function setSms(string $sms): self
     {
         $this->sms = $sms;
+
+        return $this;
+    }
+
+    public function getEntreprise(): ?Ficheclient
+    {
+        return $this->entreprise;
+    }
+
+    public function setEntreprise(?Ficheclient $entreprise): self
+    {
+        $this->entreprise = $entreprise;
 
         return $this;
     }

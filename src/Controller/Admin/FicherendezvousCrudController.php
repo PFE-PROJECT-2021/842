@@ -42,6 +42,8 @@ class FicherendezvousCrudController extends AbstractCrudController
                 ->setLabel('Rappel')->setColumns('col-6 col-md-4 col-lg-4'),
             TextField::new('sms')
                 ->setLabel('SMS')->hideOnIndex()->setColumns('col-6 col-md-4 col-lg-4'),
+            AssociationField::new('entreprise')
+                ->setLabel('Nom de l\'entreprise')->setColumns('col-5')->autoComplete(),
             TextEditorField::new('commentaire')
                 ->setLabel('Commentaire d\'appel')->setColumns('col-12'),
         ];

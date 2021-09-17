@@ -61,6 +61,13 @@ class Ficheclient
      */
     private $ficheprospect;
 
+    /**
+     * @var ArrayCollection|Collection
+     *
+     * @ORM\OneToOne(targetEntity=Ficherendezvous::class, mappedBy="entreprise", cascade={"persist", "remove"})
+     */
+    private $ficherendezvous;
+
     public function __toString()
     {
         return $this->getNomclient().' - '.$this->getRaisonsociale();
@@ -175,6 +182,28 @@ class Ficheclient
         }
 
         $this->ficheprospect = $ficheprospect;
+
+        return $this;
+    }
+
+    public function getFicherendezvous(): ?Ficherendezvous
+    {
+        return $this->ficherendezvous;
+    }
+
+    public function setFicherendezvous(?Ficherendezvous $ficherendezvous): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($ficherendezvous === null && $this->ficherendezvous !== null) {
+            $this->ficherendezvous->setEntreprise(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($ficherendezvous !== null && $ficherendezvous->getEntreprise() !== $this) {
+            $ficherendezvous->setEntreprise($this);
+        }
+
+        $this->ficherendezvous = $ficherendezvous;
 
         return $this;
     }
