@@ -60,4 +60,14 @@ class FicheprospectRepository extends ServiceEntityRepository
         return $queryBuilder->getQuery()->getOneOrNullResult();
     }
 
+    public function findClientNotIn()
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT a.* FROM ficheclient a LEFT JOIN ficheprospect b
+                on a.id = b.id WHERE b.client_id IS NULL'
+            )
+            ->getResult();
+    }
+
 }

@@ -33,7 +33,7 @@ class Ficheprospect
     private $dateappel;
 
     /**
-     * @ORM\OneToOne(targetEntity=Ficheclient::class, inversedBy="ficheprospect", cascade={"persist", "remove"})
+     * @ORM\OneToOne(targetEntity=Ficheclient::class, inversedBy="ficheprospect")
      */
     private $client;
 

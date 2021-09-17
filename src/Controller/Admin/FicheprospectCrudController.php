@@ -5,10 +5,12 @@ namespace App\Controller\Admin;
 use App\Entity\Ficheprospect;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -24,13 +26,21 @@ class FicheprospectCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id')->hideOnIndex()->hideOnForm()->hideOnDetail(),
-            DateTimeField::new('dateappel')->setLabel('Date appel')->setFormat('dd-MM-Y')->renderAsNativeWidget(),
-            TextEditorField::new('commentaireappel') ->setLabel('Commentaire'),
-            DateTimeField::new('daterappel')->setLabel('Date rappel')->setFormat('dd-MM-Y')->renderAsNativeWidget(),
-            AssociationField::new('client')->setLabel('Entreprise')
+        $fields = [
+
+            IdField::new('id')
+                ->hideOnIndex()->hideOnForm()->hideOnDetail()->setColumns('col-sm-4 col-lg-2'),
+            DateField::new('dateappel')
+                ->setLabel('Date appel')->setFormat('dd-MM-Y')->renderAsNativeWidget()->setColumns('col-sm-4 col-lg-2'),
+            AssociationField::new('client')
+                ->setLabel('Nom de l\'entreprise')->setColumns('col-5')->autoComplete(),
+            DateTimeField::new('daterappel')
+                ->setLabel('Date rappel')->setFormat('dd-MM-Y')->renderAsNativeWidget()->setColumns('col-sm-4 col-lg-2'),
+            TextEditorField::new('commentaireappel')
+                ->setLabel('Commentaire')->setColumns('col-12'),
         ];
+
+        return $fields;
     }
 
     public function configureCrud(Crud $crud): Crud
@@ -50,6 +60,16 @@ class FicheprospectCrudController extends AbstractCrudController
         /*->setPermission(Action::NEW, 'ROLE_ADMIN');
         ->setPermission(Action::DELETE, 'ROLE_SUPER_ADMIN');*/
 
+    }
+
+    public function configureFilters(Filters $filters): Filters
+    {
+        return $filters
+            // ->add(EntityFilter::new('marque'))
+            ->add('dateappel')
+            ->add('client')
+            ->add('daterappel')
+            ;
     }
 
 }
