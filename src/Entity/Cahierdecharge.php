@@ -4,9 +4,12 @@ namespace App\Entity;
 
 use App\Repository\CahierdechargeRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass=CahierdechargeRepository::class)
+ * @Vich\Uploadable()
  */
 class Cahierdecharge
 {
@@ -28,9 +31,26 @@ class Cahierdecharge
     private $infoproj;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $media;
+    private $pjname;
+
+    /**
+     * @Vich\UploadableField(mapping="certificat", fileNameProperty="pjname")
+     */
+    private $pjfiles;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTimeInterface|null
+     */
+    private $updatedAt;
+
+
+    public function __construct()
+    {
+        $this->updatedAt = new \DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -61,15 +81,54 @@ class Cahierdecharge
         return $this;
     }
 
-    public function getMedia(): ?string
+    public function getPjname(): ?string
     {
-        return $this->media;
+        return $this->pjname;
     }
 
-    public function setMedia(string $media): self
+    public function setPjname(?string $pjname): self
     {
-        $this->media = $media;
+        $this->pjname = $pjname;
 
         return $this;
     }
+
+    public function getPjFiles(): ?File
+    {
+        return $this->pjfiles;
+    }
+
+    public function setPjFiles(?File $pjfiles = null): void
+    {
+        $this->pjfiles = $pjfiles;
+
+        if (null !== $pjfiles) {
+            $this->updatedAt = new \DateTime();
+        }
+    }
+
+    /**
+     * Get the value of updatedAt
+     *
+     * @return  \DateTimeInterface|null
+     */
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set the value of updatedAt
+     *
+     * @param  \DateTimeInterface|null  $updatedAt
+     *
+     * @return  self
+     */
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
 }

@@ -10,6 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeFilter;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
@@ -76,9 +77,10 @@ class FicherendezvousCrudController extends AbstractCrudController
     {
         return $filters
             // ->add(EntityFilter::new('marque'))
-            ->add('datepriserdv')
+            //->add(DateCalendarFilter::new('datepriserdv'))
             ->add('daterdv')
             ->add('notequalif')
+            ->add('user')
             ;
     }
 }

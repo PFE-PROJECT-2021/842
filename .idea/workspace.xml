@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecdce448-adb6-46af-a533-37252b103e39" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/842concept.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/842concept.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/CahierdechargeCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/CahierdechargeCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/FicherendezvousCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/FicherendezvousCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Ficherendezvous.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Ficherendezvous.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Cahierdecharge.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Cahierdecharge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,43 +47,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/EventSubscriber/EasyAdminSubscriber.php">
+        <entry file="file://$PROJECT_DIR$/config/packages/vich_uploader.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+            <state relative-caret-position="153">
+              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Cahierdecharge.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1649">
+              <caret line="103" selection-start-line="103" selection-end-line="103" />
               <folding>
-                <element signature="e#84#115#0#PHP" expanded="true" />
+                <element signature="e#30#74#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Ficherendezvous.php">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Admin/CahierdechargeCrudController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Admin/FicheclientCrudController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+            <state relative-caret-position="138">
+              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
               <folding>
-                <element signature="e#40#67#0#PHP" expanded="true" />
+                <element signature="e#40#70#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/Admin/FicherendezvousCrudController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+            <state relative-caret-position="954">
+              <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
               <folding>
                 <element signature="e#40#71#0#PHP" expanded="true" />
               </folding>
@@ -86,22 +92,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Admin/FicheprospectCrudController.php">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Ficherendezvous.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-              <folding>
-                <element signature="e#40#69#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/Ficheprospect.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+            <state relative-caret-position="1122">
+              <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -109,17 +103,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Ficheclient.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="788">
-              <caret line="70" selection-start-line="70" selection-end-line="73" selection-end-column="5" />
+            <state relative-caret-position="1105">
+              <caret line="68" column="29" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/Admin/FicheclientCrudController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+            <state relative-caret-position="1022">
+              <caret line="74" column="5" selection-start-line="24" selection-start-column="4" selection-end-line="74" selection-end-column="5" />
+              <folding>
+                <element signature="e#40#67#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,10 +150,13 @@
         <option value="$PROJECT_DIR$/src/Controller/Admin/UserCrudController.php" />
         <option value="$PROJECT_DIR$/src/Entity/Ficheprospect.php" />
         <option value="$PROJECT_DIR$/src/EventSubscriber/EasyAdminSubscriber.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Admin/FicherendezvousCrudController.php" />
         <option value="$PROJECT_DIR$/src/Entity/Ficheclient.php" />
         <option value="$PROJECT_DIR$/src/Entity/Ficherendezvous.php" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
+        <option value="$PROJECT_DIR$/config/packages/vich_uploader.yaml" />
+        <option value="$PROJECT_DIR$/src/Entity/Cahierdecharge.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Admin/CahierdechargeCrudController.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Admin/FicherendezvousCrudController.php" />
       </list>
     </option>
   </component>
@@ -273,11 +273,13 @@
       <path value="$PROJECT_DIR$/vendor/symfony/ux-chartjs" />
       <path value="$PROJECT_DIR$/vendor/symfonycasts/reset-password-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfonycasts/verify-email-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1375" />
-    <option name="y" value="-306" />
+    <option name="x" value="-1281" />
+    <option name="y" value="-180" />
     <option name="width" value="1026" />
     <option name="height" value="546" />
   </component>
@@ -319,6 +321,12 @@
               <item name="842" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="842" type="b2602c69:ProjectViewProjectNode" />
+              <item name="842" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="842" type="b2602c69:ProjectViewProjectNode" />
@@ -391,18 +399,18 @@
       <workItem from="1630968241740" duration="1671000" />
       <workItem from="1630970115815" duration="57284000" />
       <workItem from="1631519278268" duration="40000" />
-      <workItem from="1631562344935" duration="44989000" />
+      <workItem from="1631562344935" duration="56566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105234000" />
+    <option name="totallyTimeSpent" value="116811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1208" y="-306" width="1216" height="1896" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.293345" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21891418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -427,21 +435,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/framework.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes/dev/framework.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/packages/webpack_encore.yaml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -585,13 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/FicherendezvousRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="49" selection-start-line="49" selection-end-line="59" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/admin/dashboard.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -703,26 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/FicherendezvousCrudController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#71#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/FicheclientCrudController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Admin/FicheprospectCrudController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -740,24 +706,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/vich_uploader.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/Version20210917234629.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="23" column="127" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/Version20210917234036.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/FicheclientCrudController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1022">
+          <caret line="74" column="5" selection-start-line="24" selection-start-column="4" selection-end-line="74" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Cahierdecharge.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1649">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+          <folding>
+            <element signature="e#30#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Ficheclient.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="788">
-          <caret line="70" selection-start-line="70" selection-end-line="73" selection-end-column="5" />
+        <state relative-caret-position="1105">
+          <caret line="68" column="29" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/FicherendezvousRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Ficherendezvous.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
+        <state relative-caret-position="1122">
           <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/CahierdechargeCrudController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        <state relative-caret-position="138">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding>
+            <element signature="e#40#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Admin/FicherendezvousCrudController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="954">
+          <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+          <folding>
+            <element signature="e#40#71#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
