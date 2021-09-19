@@ -8,6 +8,11 @@
 {% block content_header %}
     <h5 class="title" style="font-weight: bold;">{{ _content_title }}</h5>
 {% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+
 {% block main %}
 <div class="container-fluid">
         <div class="row">
@@ -88,7 +93,8 @@
             </div>
         </div>
         <div class="col-sm-6">
-            <div class="card">
+            {{ render_chart(chart) }}
+           {# <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">
                         <i class="fas fa-chart-pie mr-1"></i>
@@ -117,7 +123,7 @@
                         </div>
                     </div>
                 </div><!-- /.card-body -->
-            </div>
+            </div>#}
         </div>
 
         {#        <div class="col-sm-4">
@@ -142,7 +148,6 @@
 
     </div>
 </div>
-
 <footer class="main-footer">
         <strong>Copyright &copy; 2021 <a href="https://www.agence-842.com">842 CRM - 842 Concept</a>.</strong>
         Tous droits réservés.
@@ -150,4 +155,8 @@
             <b>Version</b> 1.0
         </div>
 </footer>
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
 {% endblock %}

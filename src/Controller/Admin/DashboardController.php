@@ -24,16 +24,21 @@ use Symfony\UX\Chartjs\Model\Chart;
 class  DashboardController extends AbstractDashboardController
 {
     protected $ficheclientRepository;
+    protected $ficherendezvousRepository;
+    protected $ficheprospectRepository;
+    protected $chartBuilder;
 
     public function __construct(
         FicheclientRepository $ficheclientRepository,
         FicherendezvousRepository $ficherendezvousRepository,
-        FicheprospectRepository $ficheprospectRepository
+        FicheprospectRepository $ficheprospectRepository,
+        ChartBuilderInterface $chartBuilder
     )
     {
         $this->ficheclientRepository = $ficheclientRepository;
         $this->ficherendezvousRepository = $ficherendezvousRepository;
         $this->ficheprospectRepository = $ficheprospectRepository;
+        $this->ChartBuilderInterface = $chartBuilder;
     }
 
     /**
@@ -41,13 +46,35 @@ class  DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
+        $chart = $this->ChartBuilderInterface->createChart(Chart::TYPE_LINE);
+        $chart->setData([
+            'labels' => ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            'datasets' => [
+                [
+                    'label' => 'My First dataset',
+                    'backgroundColor' => 'rgb(255, 99, 132)',
+                    'borderColor' => 'rgb(255, 99, 132)',
+                    'data' => [0, 10, 5, 2, 20, 30, 45],
+                ],
+            ],
+        ]);
+
+        $chart->setOptions([
+            'scales' => [
+                'yAxes' => [
+                    ['ticks' => ['min' => 0, 'max' => 100]],
+                ],
+            ],
+        ]);
 
         return $this->render('admin/dashboard.html.twig', [
+            'chart' => $chart,
             'countAllClient' => $this->ficheclientRepository->countAllClient(),
             'countAllRdv' => $this->ficherendezvousRepository->countAllRdv(),
-            'countAllFicheProspect' => $this->ficheprospectRepository->countAllFicheprospect()
+            'countAllFicheProspect' => $this->ficheprospectRepository->countAllFicheprospect(),
         ]);
     }
+
 
     public function configureDashboard(): Dashboard
     {
