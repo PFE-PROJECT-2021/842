@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Cahierdecharge;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Filters;
@@ -10,6 +11,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
@@ -50,17 +52,29 @@ class CahierdechargeCrudController extends AbstractCrudController
 
     public function configureCrud(Crud $crud): Crud
     {
+        $cahierdecharge = new Cahierdecharge();
+
         return $crud
             ->setDefaultSort(['infoproj' => 'ASC'])
             ->setPageTitle('index', 'Liste des cahiers de charge')
             ->setPageTitle('new', 'Ajouter Cahier de charge')
-            ->setPageTitle('detail', 'Détails Cahier de charge');
+            ->setPageTitle('detail', 'Détails Cahier de charge')
+            ->overrideTemplate('crud/detail', '/admin/detailscdc.html.twig');
 //            ->setPageTitle('edit', fn (Ficheclient $client) => sprintf('Editing <b>%s</b>', $client->getName()));
     }
 
     public function configureActions(Actions $actions): Actions
     {
-        return $actions ->add(Crud::PAGE_INDEX, 'detail');
+        $downloadbtn = Action::new('download', 'Telecharger pièce jointe', 'fa fa-download')
+        ->linkToUrl('', '')
+        ->setHtmlAttributes([
+            'target' => '_blank'
+        ])
+        ->displayAsLink()
+        ->addCssClass('btn btn-success')
+        ;
+
+        return $actions ->add(Crud::PAGE_INDEX, $downloadbtn);
     }
 
     public function configureFilters(Filters $filters): Filters

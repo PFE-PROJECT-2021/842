@@ -65,6 +65,13 @@ class User implements UserInterface
      */
     private $ficherdv;
 
+    /**
+     * @var ArrayCollection|Collection
+     *
+     * @ORM\OneToMany(targetEntity=Performanceagent::class, mappedBy="agent", cascade={"persist", "remove"})
+     */
+    private $performance;
+
     public function __toString()
     {
         return $this->getNom();
@@ -73,6 +80,7 @@ class User implements UserInterface
     public function __construct()
     {
         $this->ficherdv = new ArrayCollection();
+        $this->performance = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -238,4 +246,35 @@ class User implements UserInterface
 
         return $this;
     }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection|Performanceagent[]
+     */
+    public function getPerformance(): \Doctrine\Common\Collections\Collection
+    {
+        return $this->performance;
+    }
+
+    public function addPerformance(Performanceagent $performance): self
+    {
+        if (!$this->performance->contains($performance)) {
+            $this->performance[] = $performance;
+            $performance->setAgent($this);
+        }
+
+        return $this;
+    }
+
+    public function removePerformance(Performanceagent $performance): self
+    {
+        if ($this->performance->removeElement($performance)) {
+            // set the owning side to null (unless already changed)
+            if ($performance->getAgent() === $this) {
+                $performance->setAgent(null);
+            }
+        }
+
+        return $this;
+    }
+
 }

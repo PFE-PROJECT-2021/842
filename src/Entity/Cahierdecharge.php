@@ -37,6 +37,7 @@ class Cahierdecharge
 
     /**
      * @Vich\UploadableField(mapping="certificat", fileNameProperty="pjname")
+     * @var File
      */
     private $pjfiles;
 

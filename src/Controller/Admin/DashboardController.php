@@ -6,6 +6,7 @@ use App\Entity\Cahierdecharge;
 use App\Entity\Ficheclient;
 use App\Entity\Ficheprospect;
 use App\Entity\Ficherendezvous;
+use App\Entity\Performanceagent;
 use App\Entity\User;
 use App\Repository\FicheclientRepository;
 use App\Repository\FicheprospectRepository;
@@ -48,12 +49,12 @@ class  DashboardController extends AbstractDashboardController
     {
         $chart = $this->ChartBuilderInterface->createChart(Chart::TYPE_LINE);
         $chart->setData([
-            'labels' => ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            'labels' => ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
             'datasets' => [
                 [
-                    'label' => 'My First dataset',
-                    'backgroundColor' => 'rgb(255, 99, 132)',
-                    'borderColor' => 'rgb(255, 99, 132)',
+                    'label' => 'Performance des agents',
+                    'backgroundColor' => 'rgb(149, 152, 237)',
+                    'borderColor' => 'rgb(149, 152, 237)',
                     'data' => [0, 10, 5, 2, 20, 30, 45],
                 ],
             ],
@@ -95,12 +96,15 @@ class  DashboardController extends AbstractDashboardController
             MenuItem::linktoDashboard('Tableau de bord', 'fa fa-home')->setCssClass('btn btn-outline-light'),
 
             MenuItem::section('Gestion Client'),
-            MenuItem::linkToCrud('Entreprise', 'fas fa-list', Ficheclient::class),
+            MenuItem::linkToCrud('Entreprise', 'fas fa-landmark', Ficheclient::class),
             MenuItem::linkToCrud('Cahier de charge', 'fa fa-file-invoice', Cahierdecharge::class),
 
             MenuItem::section('Gestion Fiche'),
             MenuItem::linkToCrud('Fichier prospect', 'fas fa-scroll', Ficheprospect::class),
             MenuItem::linkToCrud('Fiche de rendez-vous', 'fas fa-copy', Ficherendezvous::class),
+
+            MenuItem::section('Gestion d\'appel'),
+            MenuItem::linkToCrud('Performance Agent', 'fas fa-headset', Performanceagent::class),
 
             MenuItem::section('Gestion utilisateur'),
             MenuItem::linkToCrud('Utilisateur', 'fa fa-users', User::class),
