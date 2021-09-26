@@ -66,7 +66,7 @@ class CahierdechargeCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         $downloadbtn = Action::new('download', 'Telecharger pièce jointe', 'fa fa-download')
-        ->linkToUrl('', '')
+        ->linkToUrl( '', '')
         ->setHtmlAttributes([
             'target' => '_blank'
         ])

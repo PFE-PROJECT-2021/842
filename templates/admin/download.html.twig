@@ -1,0 +1,62 @@
+{% extends "/admin/base-pdf.html.twig" %}
+
+{% block body %}
+
+ <img src="/public/images/Logo842.png" width="50">
+ <h1 style="text-align: center;">Données Fiche Rendez-vous</h1>
+    <h2 style="text-align: left;"> Informations Appels </h2>
+
+ <table border=1; width="100%"; style="border-collapse: collapse; margin: 25px 0; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);">
+  <tbody>
+    <tr>
+     <th scope="row">Date Prise de Rendez-vous :</th>
+     <td>{{ ficherendezvous.datepriserdv }}</td>
+    </tr>
+    <tr>
+     <th scope="row">Date et Heure du Rendez-vous :</th>
+     <td>{{ ficherendezvous.daterdv }}</td>
+    </tr>
+    <tr>
+     <th scope="row">Agent :</th>
+     <td>{{ ficherendezvous.user.nom }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Note Qualification d'appel ( /5) :</th>
+        <td>{{ ficherendezvous.notequalif }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Commentaire :</th>
+        <td>{{ ficherendezvous.commentaire }}</td>
+    </tr>
+  </tbody>
+ </table>
+
+    <h2 style="text-align: left;"> Informations Clients</h2>
+    <table border=1; width="100%"; style="border-collapse: collapse; margin: 25px 0; box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);">
+        <tbody>
+        <tr>
+            <th scope="row">Nom Client - Entreprise :</th>
+            <td>{{ ficherendezvous.entreprise.nomclient}} - {{ ficherendezvous.entreprise.raisonsociale}}</td>
+        </tr>
+        <tr>
+            <th scope="row">Prix :</th>
+            <td>{{ ficherendezvous.prix }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Engagement :</th>
+            <td>{{ ficherendezvous.engagement }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Rappel :</th>
+            <td>{{ ficherendezvous.rappel }}</td>
+        </tr>
+        <tr>
+            <th scope="row">SMS :</th>
+            <td>{{ ficherendezvous.sms }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 style="text-align: right;"> Signature</h3>
+
+{% endblock %}
